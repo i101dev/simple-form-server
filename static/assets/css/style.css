@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&display=swap");
+
+:root {
+    --header-height: 3.5rem;
+
+    /*========== Colors ==========*/
+    /*Color mode HSL(hue, saturation, lightness)*/
+    --first-color: hsl(14, 98%, 50%);
+    --black-color: hsl(0, 0%, 0%);
+    --black-color-light: hsl(0, 0%, 40%);
+    --white-color: hsl(0, 0%, 95%);
+    --title-color: hsl(0, 0%, 0%);
+    --text-color: hsl(0, 0%, 35%);
+    --text-color-light: hsl(0, 0%, 64%);
+    --body-color: hsl(0, 0%, 87%);
+    --container-color: hsl(0, 0%, 83%);
+
+    /*========== Font and typography ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --body-font: "Bai Jamjuree", sans-serif;
+    --biggest-font-size: 2.5rem;
+    --h1-font-size: 1.75rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1.125rem;
+    --normal-font-size: 0.938rem;
+    --small-font-size: 0.813rem;
+    --smaller-font-size: 0.75rem;
+
+    /*========== Font weight ==========*/
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semi-bold: 600;
+    --font-bold: 700;
+
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+/*=============== BASE ===============*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
+    transition: background-color 0.4s /* For dark mode */;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: var(--title-color);
+    font-weight: var(--font-bold);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.contact__mail {
+    position: relative;
+    /* background-color: var(--black-color); */
+    padding: 5rem 1.5rem 2.5rem;
+    margin-top: -2.5rem;
+    transition: background-color 0.4s;
+}
+
+.contact__title {
+    color: var(--title-color);
+    font-size: var(--h2-font-size);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.contact__form,
+.contact__group {
+    display: grid;
+    row-gap: 1.25rem;
+}
+
+.contact__form {
+    position: relative;
+}
+
+.contact__box {
+    position: relative;
+    width: 100%;
+    height: 58px;
+}
+
+.contact__input,
+.contact__button {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    outline: none;
+    border: none;
+}
+
+.contact__input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--white-color);
+    border: 3px solid var(--text-color-light);
+    color: var(--black-color-light);
+    padding: 0.5rem 1rem;
+    font-size: var(--font-medium);
+    transition: border 0.4s, background-color 0.4s;
+}
+
+.contact__input::placeholder {
+    color: var(--text-light);
+    transition: opacity 0.4s;
+}
+
+.contact__input:focus {
+    border: 3px solid var(--white-color);
+}
+
+.contact__input:-webkit-autofill {
+    transition: background-color 6000s, color 6000s;
+}
+
+.contact__label {
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    color: var(--text-color);
+    font-size: var(--small-font-size);
+    font-weight: var(--font-medium);
+    background-color: var(--white-color);
+    padding: 6px 8px;
+    pointer-events: none;
+    transition: top 0.4s, opacity 0.4s, background-color 0.4s;
+    opacity: 0;
+}
+
+.contact__form .contact__area {
+    height: 10rem;
+}
+
+.contact__area textarea {
+    resize: none;
+    padding-top: 1rem;
+}
+
+.contact__button {
+    background-color: var(--first-color);
+    cursor: pointer;
+}
+
+.contact__input:focus::placeholder {
+    opacity: 0;
+}
+
+/* Opaque placeholder */
+.contact__input:focus + .contact__label,
+.contact__input:not(:placeholder-shown).contact__input:not(:focus) + .contact__label {
+    opacity: 1;
+    top: -16px;
+}
+
+/* Button */
+
+.button,
+.button__ghost {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 0.5rem;
+}
+
+.button {
+    background-color: var(--black-color);
+    padding: 1.1rem 1.5rem;
+    color: var(--white-color);
+    font-weight: var(--font-medium);
+    transition: background-color 0.4s;
+}
+
+.button i {
+    font-size: 1.25rem;
+}
+
+.button:hover {
+    background-color: var(--first-color);
+}

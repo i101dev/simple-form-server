@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="contact__mail">
+        <h2 class="contact__title">Send Me A Message</h2>
+
+        <form method="POST" action="/form" class="contact__form" id="contact-form">
+            <div class="contact__group">
+                <div class="contact__box">
+                    <input type="text" name="user_name" class="contact__input" id="name" required
+                        placeholder="First name">
+                    <label for="name" class="contact__label">First name</label>
+                </div>
+
+                <div class="contact__box">
+                    <input type="email" name="user_email" class="contact__input" id="email" required
+                        placeholder="Email address">
+                    <label for="email" class="contact__label">Email</label>
+                </div>
+            </div>
+
+            <div class="contact__box">
+                <input type="text" name="user_subject" class="contact__input" id="subject" required
+                    placeholder="Subject">
+                <label for="subject" class="contact__label">Subject</label>
+            </div>
+            <div class="contact__box contact__area">
+                <textarea name="user_message" id="message" class="contact__input" required
+                    placeholder="Message"></textarea>
+                <label for="message" class="contact__label">Message</label>
+            </div>
+
+            <p class="contact__message" id="contact-message"></p>
+
+            <button type="submit" class="contact__button button">
+                <i class="ri-send-plane-line"></i> Send Message
+            </button>
+        </form>
+    </div>
+</body>
+
+</html>
